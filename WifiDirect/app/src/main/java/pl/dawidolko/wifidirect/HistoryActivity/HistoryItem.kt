@@ -13,5 +13,5 @@ import java.io.Serializable
 data class HistoryItem(
     val fileName: String,
     val timestamp: String,
-    val isSent: Boolean // true - wysłany, false - odebrany
+    val isSent: Boolean // true - sent, false - Received
 ) : Serializable

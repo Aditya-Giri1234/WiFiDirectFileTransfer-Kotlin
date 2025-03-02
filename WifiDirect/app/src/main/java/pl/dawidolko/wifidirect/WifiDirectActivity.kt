@@ -38,31 +38,31 @@ class WifiDirectActivity : AppCompatActivity() {
         val btnTrustedDevices = findViewById<Button>(R.id.btnTrustedDevices)
         val btnHistoryFile = findViewById<Button>(R.id.btnHistoryFile)
 
-        // Obsługa przycisku "Send File" – przejście do FileSenderActivity
+        // Handling the 'Send File' button – navigating to FileSenderActivity.
         btnSender.setOnClickListener {
             val intent = Intent(this, FileSenderActivity::class.java)
             startActivity(intent)
         }
 
-        // Obsługa przycisku "Receive File" – przejście do FileReceiverActivity
+        // Handling the 'Receive File' button – navigating to FileReceiverActivity.
         btnReceiver.setOnClickListener {
             val intent = Intent(this, FileReceiverActivity::class.java)
             startActivity(intent)
         }
 
-        // Obsługa przycisku "Wi-Fi Direct Settings" – przejście do ustawień Wi-Fi Direct
+        // Handling the 'Wi-Fi Direct Settings' button – navigating to the Wi-Fi Direct settings.
         btnWifiDirect.setOnClickListener {
             val intent = Intent(Settings.ACTION_WIFI_IP_SETTINGS) // Możesz również użyć Settings.ACTION_WIFI_SETTINGS
             startActivity(intent)
         }
 
-        // Obsługa przycisku "Trusted Devices" – przejście do widoku zaufanych urządzeń
+        // Handling the 'Trusted Devices' button – navigating to the trusted devices view.
         btnTrustedDevices.setOnClickListener {
             val intent = Intent(this, TrustedDevicesActivity::class.java)
             startActivity(intent)
         }
 
-        // Obsługa przycisku "History Files" – przejście do widoku historii plików
+        // Handling the 'History Files' button – navigating to the file history view.
         btnHistoryFile.setOnClickListener {
             val intent = Intent(this, HistoryActivity::class.java) // Przejście do HistoryActivity
             startActivity(intent)
