@@ -193,7 +193,7 @@ class FileReceiverActivity : AppCompatActivity() {
 
     private fun startControlServer() {
         if (isControlServerRunning) {
-            Log.d("ControlServer", "Serwer kontrolny już działa.")
+            Log.d("ControlServer", "The control server is already running.")
             return
         }
 
@@ -201,12 +201,12 @@ class FileReceiverActivity : AppCompatActivity() {
         Thread {
             try {
                 controlServerSocket = ServerSocket(controlPort)
-                Log.d("ControlServer", "Serwer kontrolny uruchomiony na porcie $controlPort")
+                Log.d("ControlServer", "The control server is running on port $controlPort.")
                 while (!Thread.currentThread().isInterrupted) {
                     val clientSocket = controlServerSocket!!.accept()
                     val reader = BufferedReader(InputStreamReader(clientSocket.getInputStream()))
                     val clientIp = reader.readLine()
-                    Log.d("ControlServer", "Odebrano adres IP klienta: $clientIp")
+                    Log.d("ControlServer", "Client IP address received: $clientIp.")
                     val sharedPreferences = getSharedPreferences("client_info", MODE_PRIVATE)
                     val editor = sharedPreferences.edit()
                     editor.putString("client_ip", clientIp)
